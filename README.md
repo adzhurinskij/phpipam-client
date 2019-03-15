@@ -1,6 +1,10 @@
 # phpipam-client
 PHPIPAM Python RESP API Client
 
+![Travis (.org)](https://img.shields.io/travis/adzhurinskij/phpipam-client.svg)
+
+It supports Python 2.7 and 3.4+.
+
 __Example__
 ```python
 from phpipam_client import PhpIpamClient
