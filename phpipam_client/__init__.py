@@ -1,0 +1,1 @@
+from phpipam_client.client import PhpIpamClient

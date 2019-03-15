@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "phpipam-client"
+version = "0.1.0"
+description = "PHPIPAM Python RESP API Client"
+authors = ["Alexandr Dzhurinskij <adzhurinskij@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "~2.7 || ^3.6"
+requests = "^2.21"
+
+[tool.poetry.dev-dependencies]
+poetry-setup = "^0.3.6"
+lockfile = "^0.12.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
