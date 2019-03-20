@@ -27,7 +27,7 @@ setup(
     name='phpipam-client',  # Required
     # https://www.python.org/dev/peps/pep-0440/
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.0',  # Required
+    version='0.2.0',  # Required
     # https://packaging.python.org/specifications/core-metadata/#summary
     description="PHPIPAM Python RESP API Client",  # Required
     # https://packaging.python.org/specifications/core-metadata/#description-optional
