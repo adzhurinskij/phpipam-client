@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phpipam-client"
-version = "0.1.0"
+version = "0.2.0"
 description = "PHPIPAM Python RESP API Client"
 authors = ["Alexandr Dzhurinskij <adzhurinskij@gmail.com>"]
 readme = "README.md"

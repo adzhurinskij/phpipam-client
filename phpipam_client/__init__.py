@@ -1,1 +1,4 @@
-from phpipam_client.client import PhpIpamClient
+from phpipam_client.client import (
+    PhpIpamClient,
+    GET, POST, PATCH, DELETE,
+)
