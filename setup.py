@@ -34,6 +34,7 @@ setup(
     long_description=long_description,  # Optional
     # https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
     long_description_content_type='text/markdown',  # Optional (see note above)
+    url="https://github.com/adzhurinskij/phpipam-client",  # Optional
     author="Alexandr Dzhurinskij",  # Optional
     author_email="adzhurinskij@gmail.com",  # Optional
     # For a list of valid classifiers, see https://pypi.org/classifiers/
@@ -58,5 +59,6 @@ setup(
     include_package_data=True,
     # https://packaging.python.org/specifications/core-metadata/#project-url-multiple-use
     project_urls={  # Optional
+        'homepage': 'https://github.com/adzhurinskij/phpipam-client',
     },
 )

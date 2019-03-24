@@ -5,6 +5,7 @@ description = "PHPIPAM Python RESP API Client"
 authors = ["Alexandr Dzhurinskij <adzhurinskij@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+homepage = "https://github.com/adzhurinskij/phpipam-client"
 
 [tool.poetry.dependencies]
 python = "~2.7 || ^3.4"
