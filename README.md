@@ -3,6 +3,11 @@
 
 PHPIPAM Python RESP API Client. It supports Python 2.7 and 3.4+.
 
+### Installation
+```
+pip install phpipam-client
+```
+
 ### Example
 Basic usage:
 ```python
