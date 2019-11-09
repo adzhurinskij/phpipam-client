@@ -111,7 +111,8 @@ class PhpIpamClient(object):
         return self.query(path=path, method=DELETE)
 
     def login(self):
-        resp = self.query('/user/',
+        resp = self.query(
+            '/user/',
             method=POST,
             auth=HTTPBasicAuth(self._api_username, self._api_password),
         )
@@ -123,7 +124,7 @@ class PhpIpamClient(object):
     def token_check(self):
         try:
             return self.query('/user/')
-        except:
+        except Exception:
             return self.login()
 
     def token_extend(self):
