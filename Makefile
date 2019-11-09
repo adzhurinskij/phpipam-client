@@ -1,5 +1,15 @@
-clean: clean-build clean-pyc clean-pycache
-  
+# HELP
+.PHONY: help
+
+help: ## This help
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
+.DEFAULT_GOAL := help
+
+# CLEAN
+
+clean: clean-build clean-pyc clean-pycache ## Clean repository
+
 clean-build:
 	rm -fr build/
 	rm -fr dist/
@@ -13,17 +23,24 @@ clean-pyc:
 clean-pycache:
 	find . -name '__pycache__' -exec rm -rf {} +
 
-sdist: clean psetup
+
+# TOOLS
+
+build: clean ## Build PyPI packet
+	poetry run poetry-setup
 	poetry build
 
-psetup:
-	poetry run poetry-setup
 
-patch: psetup
+# VERSIONS
+
+bump-patch: ## Bump patch version
+	poetry run poetry-setup # update setup.py and requirements.txt
 	bumpversion patch
 
-minor: psetup
+bump-minor: ## Bump minor version
+	poetry run poetry-setup # update setup.py and requirements.txt
 	bumpversion minor
 
-major: psetup
+bump-major: ## Bump major version
+	poetry run poetry-setup # update setup.py and requirements.txt
 	bumpversion major

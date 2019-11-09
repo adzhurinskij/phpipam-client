@@ -1,0 +1,9 @@
+# editorconfig.org
+root = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{Makefile,**.mk}]
+# Use tabs for indentation (Makefiles require tabs)
+indent_style = tab
