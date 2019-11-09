@@ -38,27 +38,27 @@ setup(
     author="Alexandr Dzhurinskij",  # Optional
     author_email="adzhurinskij@gmail.com",  # Optional
     # For a list of valid classifiers, see https://pypi.org/classifiers/
-    classifiers=[
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7'
-    ],  # Optional
-    packages=find_packages(),  # Required
+        classifiers=['License :: OSI Approved :: MIT License',
+                     'Programming Language :: Python :: 2',
+                     'Programming Language :: Python :: 2.7',
+                     'Programming Language :: Python :: 3',
+                     'Programming Language :: Python :: 3.4',
+                     'Programming Language :: Python :: 3.5',
+                     'Programming Language :: Python :: 3.6',
+                     'Programming Language :: Python :: 3.7'],  # Optional
+    packages=find_packages(
+            ),  # Required
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        'requests (>=2.21,<3.0)',
-    ],  # Optional
+            'requests (>=2.21,<3.0)',
+            ],  # Optional
     # https://setuptools.readthedocs.io/en/latest/setuptools.html#dependencies-that-aren-t-in-pypi
-    dependency_links=[],  # Optional
+    dependency_links=[
+            ],  # Optional
     # https://stackoverflow.com/a/16576850
     include_package_data=True,
     # https://packaging.python.org/specifications/core-metadata/#project-url-multiple-use
     project_urls={  # Optional
-        'homepage': 'https://github.com/adzhurinskij/phpipam-client',
-    },
+            'homepage': 'https://github.com/adzhurinskij/phpipam-client',
+            },
 )
