@@ -98,6 +98,17 @@ class PhpIpamClient(object):
         if 'data' in result:
             return result['data']
 
+    def get(self, path):
+        return self.query(path=path, method=GET)
+
+    def post(self, path, data):
+        return self.query(path=path, method=POST, data=data)
+
+    def patch(self, path, data):
+        return self.query(path=path, method=PATCH, data=data)
+
+    def delete(self, path):
+        return self.query(path=path, method=DELETE)
 
     def login(self):
         resp = self.query('/user/',

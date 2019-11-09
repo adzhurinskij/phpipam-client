@@ -11,7 +11,7 @@ pip install phpipam-client
 ### Example
 Basic usage:
 ```python
-from phpipam_client import PhpIpamClient, PATCH
+from phpipam_client import PhpIpamClient, GET, PATCH
 
 ipam = PhpIpamClient(
     url='https://ipam',
@@ -22,7 +22,23 @@ ipam = PhpIpamClient(
 )
 
 # read object
-print(ipam.query('/sections/'))
+ipam.get('/sections/')
+
+# create object
+ipam.post('/sections/', {
+    'description': 'example',
+})
+
+# update object
+ipam.patch('/sections/1/', {
+    'description': 'example',
+})
+
+# delete object
+ipam.delete('/sections/1/')
+
+# read object
+ipam.query('/sections/', method=GET)
 
 # update object
 ipam.query('/sections/1/', method=PATCH, data={
