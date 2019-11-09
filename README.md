@@ -1,5 +1,5 @@
 # phpipam-client
-![PyPI](https://img.shields.io/pypi/v/phpipam-client.svg) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/phpipam-client.svg) ![Pyup Status](https://pyup.io/repos/github/adzhurinskij/phpipam-client/shield.svg) ![Travis (.org)](https://img.shields.io/travis/adzhurinskij/phpipam-client.svg)
+[![PyPI](https://img.shields.io/pypi/v/phpipam-client.svg)](https://pypi.org/project/phpipam-client/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/phpipam-client.svg)](https://pypi.org/project/phpipam-client/) [![Pyup Status](https://pyup.io/repos/github/adzhurinskij/phpipam-client/shield.svg)](https://pyup.io/repos/github/adzhurinskij/phpipam-client/) [![Travis (.org)](https://img.shields.io/travis/adzhurinskij/phpipam-client.svg)](https://travis-ci.org/adzhurinskij/phpipam-client)
 
 PHPIPAM Python RESP API Client. It supports Python 2.7 and 3.4+.
 
