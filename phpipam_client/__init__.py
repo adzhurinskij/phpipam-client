@@ -1,5 +1,6 @@
 from phpipam_client.client import (
     PhpIpamClient,
+    PhpIpamException,
     GET,
     POST,
     PATCH,
@@ -8,6 +9,7 @@ from phpipam_client.client import (
 
 __all__ = [
     'PhpIpamClient',
+    'PhpIpamException',
     'GET',
     'POST',
     'PATCH',
