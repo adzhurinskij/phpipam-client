@@ -45,8 +45,8 @@ class PhpIpamClient(object):
         if not self._api_encryption:
             self.login()
 
-    def query(self, path, method=GET, data=None, auth=None):
-        _params = {}
+    def query(self, path, method=GET, data=None, params=None, auth=None):
+        _params = params or {}
         _data = None
 
         if self._api_token:
@@ -54,22 +54,21 @@ class PhpIpamClient(object):
 
         if self._api_encryption:
             _url = '{}/api/'.format(self._api_url)
-            _enc_data = {}
 
             for index, value in enumerate(list(filter(None, path.split('/')))):
                 if index == 0:
-                    _enc_data['controller'] = value
+                    _params['controller'] = value
                 elif index == 1:
-                    _enc_data['id'] = value
+                    _params['id'] = value
                 else:
-                    _enc_data['id{}'.format(index)] = value
+                    _params['id{}'.format(index)] = value
 
             if data is not None:
-                _enc_data.update(data)
+                _params.update(data)
 
             _params = {
                 'app_id': self._api_appid,
-                'enc_request': base64.b64encode(rijndael.encrypt(self._api_token, json.dumps(_enc_data)))
+                'enc_request': base64.b64encode(rijndael.encrypt(self._api_token, json.dumps(_params)))
             }
         else:
             _url = '{}/api/{}{}'.format(self._api_url, self._api_appid, path)
@@ -98,17 +97,17 @@ class PhpIpamClient(object):
         if 'data' in result:
             return result['data']
 
-    def get(self, path):
-        return self.query(path=path, method=GET)
+    def get(self, path, params=None):
+        return self.query(path=path, method=GET, params=params)
 
-    def post(self, path, data):
-        return self.query(path=path, method=POST, data=data)
+    def post(self, path, data, params=None):
+        return self.query(path=path, method=POST, data=data, params=params)
 
-    def patch(self, path, data):
-        return self.query(path=path, method=PATCH, data=data)
+    def patch(self, path, data, params=None):
+        return self.query(path=path, method=PATCH, data=data, params=params)
 
-    def delete(self, path):
-        return self.query(path=path, method=DELETE)
+    def delete(self, path, params=None):
+        return self.query(path=path, method=DELETE, params=params)
 
     def login(self):
         resp = self.query(
