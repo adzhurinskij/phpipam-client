@@ -24,6 +24,11 @@ ipam = PhpIpamClient(
 # read object
 ipam.get('/sections/')
 
+ipam.get('/sections/', {
+    'filter_by': 'id',
+    'filter_value': 2,
+})
+
 # create object
 ipam.post('/sections/', {
     'description': 'example',
