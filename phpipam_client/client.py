@@ -54,23 +54,22 @@ class PhpIpamClient(object):
 
         if self._api_encryption:
             _url = '{}/api/'.format(self._api_url)
-            _enc_data = {}
 
             for index, value in enumerate(list(filter(None, path.split('/')))):
                 if index == 0:
-                    _enc_data['controller'] = value
+                    _params['controller'] = value
                 elif index == 1:
-                    _enc_data['id'] = value
+                    _params['id'] = value
                 else:
-                    _enc_data['id{}'.format(index)] = value
+                    _params['id{}'.format(index)] = value
 
             if data is not None:
-                _enc_data.update(data)
+                _params.update(data)
 
-            _params.update({
+            _params = {
                 'app_id': self._api_appid,
-                'enc_request': base64.b64encode(rijndael.encrypt(self._api_token, json.dumps(_enc_data)))
-            })
+                'enc_request': base64.b64encode(rijndael.encrypt(self._api_token, json.dumps(_params)))
+            }
         else:
             _url = '{}/api/{}{}'.format(self._api_url, self._api_appid, path)
 
